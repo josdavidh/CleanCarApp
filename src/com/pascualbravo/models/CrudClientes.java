@@ -2,14 +2,19 @@ package com.pascualbravo.models;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.*;
 import javax.swing.JOptionPane;
 
 public class CrudClientes extends Conexion {
+    
+    PreparedStatement ps;
+    Connection con;
+    ResultSet rs;
 
     public boolean registrar(Clientes clientes) {
-        PreparedStatement ps = null; //Variable de preparacion 
+        ps = null; //Variable de preparacion 
 
-        Connection con = getConexion(); //variable de conexion 
+        con = getConexion(); //variable de conexion 
 
         String SQL = "insert into Clientes (Cedula_Clnt,Nombre,Telefono) values (?,?,?);";
 

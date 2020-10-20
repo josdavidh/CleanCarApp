@@ -5,6 +5,7 @@
  */
 package Vistas;
 
+import com.pascualbravo.models.Conexion;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -14,11 +15,12 @@ import javax.swing.ImageIcon;
  */
 public class FrmServicios extends javax.swing.JFrame {
 
-    /**
-     * Creates new form Servicios
-     */
+    Conexion conexion = new Conexion();
+    
     public FrmServicios() {
         initComponents();
+             
+        cbxTipoLavadoServicios = conexion.llenarCbx(cbxTipoLavadoServicios, "TIpo_Servicio", "servicios");
         
         ImageIcon imgEditar = new ImageIcon("src\\Recursos\\boligrafo.png");
         editarPrecioServicio.setIcon(new ImageIcon(imgEditar.getImage().getScaledInstance(editarPrecioServicio.getWidth(), editarPrecioServicio.getHeight(), Image.SCALE_SMOOTH)));
@@ -68,9 +70,9 @@ public class FrmServicios extends javax.swing.JFrame {
         txtCedulaCliente = new javax.swing.JTextField();
         jSeparator8 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        cbxTipoLavadoServicios = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
+        cbxEncargadoServicios = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -283,16 +285,21 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel15.setText("Cedula");
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 120, 30));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox1, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 240, 30));
+        cbxTipoLavadoServicios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona" }));
+        jPanel2.add(cbxTipoLavadoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 240, 30));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(153, 153, 153));
         jLabel16.setText("Encargado");
         jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 120, 30));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
-        jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 120, 210, 30));
+        cbxEncargadoServicios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona" }));
+        cbxEncargadoServicios.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cbxEncargadoServiciosActionPerformed(evt);
+            }
+        });
+        jPanel2.add(cbxEncargadoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 120, 210, 30));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1060, 580));
 
@@ -337,6 +344,10 @@ public class FrmServicios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtCedulaClienteActionPerformed
 
+    private void cbxEncargadoServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEncargadoServiciosActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_cbxEncargadoServiciosActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -376,9 +387,9 @@ public class FrmServicios extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnConfirmarServicio;
     private javax.swing.JButton cancelarServicio;
+    private javax.swing.JComboBox<String> cbxEncargadoServicios;
+    private javax.swing.JComboBox<String> cbxTipoLavadoServicios;
     private javax.swing.JLabel editarPrecioServicio;
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
