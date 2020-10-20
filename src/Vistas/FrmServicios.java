@@ -38,7 +38,7 @@ public class FrmServicios extends javax.swing.JFrame {
         cancelarServicio = new javax.swing.JButton();
         btnConfirmarServicio = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
-        jTextField2 = new javax.swing.JTextField();
+        txtPlacaVehiculo = new javax.swing.JTextField();
         jLabel2 = new javax.swing.JLabel();
         txtNombreCliente = new javax.swing.JTextField();
         jSeparator2 = new javax.swing.JSeparator();
@@ -53,16 +53,16 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel8 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        jTextField5 = new javax.swing.JTextField();
+        txtMarcaVehiculo = new javax.swing.JTextField();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel11 = new javax.swing.JLabel();
-        jTextField6 = new javax.swing.JTextField();
+        txtNombreVehiculo = new javax.swing.JTextField();
         jSeparator5 = new javax.swing.JSeparator();
         jLabel12 = new javax.swing.JLabel();
-        jTextField7 = new javax.swing.JTextField();
+        txtModeloVehiculo = new javax.swing.JTextField();
         jSeparator6 = new javax.swing.JSeparator();
         jLabel13 = new javax.swing.JLabel();
-        jTextField8 = new javax.swing.JTextField();
+        txtColorVehiculo = new javax.swing.JTextField();
         jSeparator7 = new javax.swing.JSeparator();
         jLabel14 = new javax.swing.JLabel();
         txtCedulaCliente = new javax.swing.JTextField();
@@ -103,17 +103,17 @@ public class FrmServicios extends javax.swing.JFrame {
         jPanel2.add(btnConfirmarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 480, 180, 50));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 220, 10));
 
-        jTextField2.setBackground(new java.awt.Color(246, 246, 251));
-        jTextField2.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
-        jTextField2.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField2.setBorder(null);
-        jTextField2.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField2.addActionListener(new java.awt.event.ActionListener() {
+        txtPlacaVehiculo.setBackground(new java.awt.Color(246, 246, 251));
+        txtPlacaVehiculo.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
+        txtPlacaVehiculo.setForeground(new java.awt.Color(0, 0, 0));
+        txtPlacaVehiculo.setBorder(null);
+        txtPlacaVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtPlacaVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField2ActionPerformed(evt);
+                txtPlacaVehiculoActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField2, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 220, 30));
+        jPanel2.add(txtPlacaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 70, 220, 30));
 
         jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel2.setForeground(new java.awt.Color(153, 153, 153));
@@ -193,17 +193,17 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel10.setText("Marca");
         jPanel2.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 130, 90, 30));
 
-        jTextField5.setBackground(new java.awt.Color(246, 246, 251));
-        jTextField5.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
-        jTextField5.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField5.setBorder(null);
-        jTextField5.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField5.addActionListener(new java.awt.event.ActionListener() {
+        txtMarcaVehiculo.setBackground(new java.awt.Color(246, 246, 251));
+        txtMarcaVehiculo.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
+        txtMarcaVehiculo.setForeground(new java.awt.Color(0, 0, 0));
+        txtMarcaVehiculo.setBorder(null);
+        txtMarcaVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtMarcaVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField5ActionPerformed(evt);
+                txtMarcaVehiculoActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 230, 30));
+        jPanel2.add(txtMarcaVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 170, 230, 30));
         jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 210, 230, 10));
 
         jLabel11.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
@@ -211,17 +211,17 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel11.setText("Nombre");
         jPanel2.add(jLabel11, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 220, 90, 30));
 
-        jTextField6.setBackground(new java.awt.Color(246, 246, 251));
-        jTextField6.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
-        jTextField6.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField6.setBorder(null);
-        jTextField6.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField6.addActionListener(new java.awt.event.ActionListener() {
+        txtNombreVehiculo.setBackground(new java.awt.Color(246, 246, 251));
+        txtNombreVehiculo.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
+        txtNombreVehiculo.setForeground(new java.awt.Color(0, 0, 0));
+        txtNombreVehiculo.setBorder(null);
+        txtNombreVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtNombreVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField6ActionPerformed(evt);
+                txtNombreVehiculoActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 260, 30));
+        jPanel2.add(txtNombreVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 260, 260, 30));
         jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 300, 260, 10));
 
         jLabel12.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
@@ -229,17 +229,17 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel12.setText("Modelo");
         jPanel2.add(jLabel12, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 310, 90, 30));
 
-        jTextField7.setBackground(new java.awt.Color(246, 246, 251));
-        jTextField7.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
-        jTextField7.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField7.setBorder(null);
-        jTextField7.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField7.addActionListener(new java.awt.event.ActionListener() {
+        txtModeloVehiculo.setBackground(new java.awt.Color(246, 246, 251));
+        txtModeloVehiculo.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
+        txtModeloVehiculo.setForeground(new java.awt.Color(0, 0, 0));
+        txtModeloVehiculo.setBorder(null);
+        txtModeloVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtModeloVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField7ActionPerformed(evt);
+                txtModeloVehiculoActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField7, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 110, 30));
+        jPanel2.add(txtModeloVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 110, 30));
         jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 110, 10));
 
         jLabel13.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
@@ -247,17 +247,17 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel13.setText("Color");
         jPanel2.add(jLabel13, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 310, 90, 40));
 
-        jTextField8.setBackground(new java.awt.Color(246, 246, 251));
-        jTextField8.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
-        jTextField8.setForeground(new java.awt.Color(0, 0, 0));
-        jTextField8.setBorder(null);
-        jTextField8.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
-        jTextField8.addActionListener(new java.awt.event.ActionListener() {
+        txtColorVehiculo.setBackground(new java.awt.Color(246, 246, 251));
+        txtColorVehiculo.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
+        txtColorVehiculo.setForeground(new java.awt.Color(0, 0, 0));
+        txtColorVehiculo.setBorder(null);
+        txtColorVehiculo.setCursor(new java.awt.Cursor(java.awt.Cursor.TEXT_CURSOR));
+        txtColorVehiculo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jTextField8ActionPerformed(evt);
+                txtColorVehiculoActionPerformed(evt);
             }
         });
-        jPanel2.add(jTextField8, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 120, 30));
+        jPanel2.add(txtColorVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(190, 350, 120, 30));
         jPanel2.add(jSeparator7, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 390, 130, 20));
 
         jLabel14.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
@@ -305,9 +305,9 @@ public class FrmServicios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_cancelarServicioActionPerformed
 
-    private void jTextField2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField2ActionPerformed
+    private void txtPlacaVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPlacaVehiculoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField2ActionPerformed
+    }//GEN-LAST:event_txtPlacaVehiculoActionPerformed
 
     private void txtNombreClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreClienteActionPerformed
         // TODO add your handling code here:
@@ -317,21 +317,21 @@ public class FrmServicios extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_txtTelefonoClienteActionPerformed
 
-    private void jTextField5ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField5ActionPerformed
+    private void txtMarcaVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMarcaVehiculoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField5ActionPerformed
+    }//GEN-LAST:event_txtMarcaVehiculoActionPerformed
 
-    private void jTextField6ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField6ActionPerformed
+    private void txtNombreVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtNombreVehiculoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField6ActionPerformed
+    }//GEN-LAST:event_txtNombreVehiculoActionPerformed
 
-    private void jTextField7ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField7ActionPerformed
+    private void txtModeloVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtModeloVehiculoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField7ActionPerformed
+    }//GEN-LAST:event_txtModeloVehiculoActionPerformed
 
-    private void jTextField8ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jTextField8ActionPerformed
+    private void txtColorVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtColorVehiculoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jTextField8ActionPerformed
+    }//GEN-LAST:event_txtColorVehiculoActionPerformed
 
     private void txtCedulaClienteActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtCedulaClienteActionPerformed
         // TODO add your handling code here:
@@ -404,13 +404,13 @@ public class FrmServicios extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JTextField jTextField2;
-    private javax.swing.JTextField jTextField5;
-    private javax.swing.JTextField jTextField6;
-    private javax.swing.JTextField jTextField7;
-    private javax.swing.JTextField jTextField8;
     public javax.swing.JTextField txtCedulaCliente;
+    public javax.swing.JTextField txtColorVehiculo;
+    public javax.swing.JTextField txtMarcaVehiculo;
+    public javax.swing.JTextField txtModeloVehiculo;
     public javax.swing.JTextField txtNombreCliente;
+    public javax.swing.JTextField txtNombreVehiculo;
+    public javax.swing.JTextField txtPlacaVehiculo;
     public javax.swing.JTextField txtTelefonoCliente;
     // End of variables declaration//GEN-END:variables
 }
