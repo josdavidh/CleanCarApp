@@ -1,6 +1,6 @@
 package com.pascualbravo.controller;
 
-import Vistas.Servicios;
+import Vistas.FrmServicios;
 import com.pascualbravo.models.Clientes;
 import com.pascualbravo.models.CrudClientes;
 import java.awt.event.ActionEvent;
@@ -11,9 +11,9 @@ public class ControllerClientes implements ActionListener {
 
     private Clientes clientes;
     private CrudClientes crudClientes;
-    private Servicios servicios;
+    private FrmServicios servicios;
 
-    public ControllerClientes(Clientes clnts, CrudClientes crudClnts, Servicios frmServ) {
+    public ControllerClientes(Clientes clnts, CrudClientes crudClnts, FrmServicios frmServ) {
 
         this.clientes = clnts;
         this.crudClientes = crudClnts;

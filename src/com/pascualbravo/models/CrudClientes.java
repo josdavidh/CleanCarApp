@@ -4,7 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import javax.swing.JOptionPane;
 
-public class CrudClientes extends conexion {
+public class CrudClientes extends Conexion {
 
     public boolean registrar(Clientes clientes) {
         PreparedStatement ps = null; //Variable de preparacion 

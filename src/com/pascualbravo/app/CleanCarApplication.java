@@ -1,6 +1,6 @@
 package com.pascualbravo.app;
 
-import Vistas.Servicios;
+import Vistas.FrmServicios;
 import com.pascualbravo.controller.ControllerClientes;
 import com.pascualbravo.models.Clientes;
 import com.pascualbravo.models.CrudClientes;
@@ -12,7 +12,7 @@ public class CleanCarApplication {
         
         Clientes clnts = new Clientes();
         CrudClientes crudClnts = new CrudClientes();
-        Servicios frmServ = new Servicios();
+        FrmServicios frmServ = new FrmServicios();
         
         ControllerClientes controllerClnts = new ControllerClientes(clnts,crudClnts,frmServ);
         controllerClnts.iniciar();

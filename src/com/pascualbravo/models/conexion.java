@@ -6,7 +6,7 @@ import java.sql.*;
 import javax.swing.JOptionPane;
 
 
-public class conexion {
+public class Conexion {
     
     private final String base = "cleancardb"; 
     private final String username = "root"; 
