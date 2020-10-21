@@ -6,6 +6,8 @@
 package Vistas;
 
 import com.pascualbravo.models.Conexion;
+import com.pascualbravo.models.CrudServicios;
+import com.pascualbravo.models.Servicios;
 import java.awt.Image;
 import javax.swing.ImageIcon;
 
@@ -16,11 +18,17 @@ import javax.swing.ImageIcon;
 public class FrmServicios extends javax.swing.JFrame {
 
     Conexion conexion = new Conexion();
+    CrudServicios crudServicios = new CrudServicios();
+    Servicios servicios = new Servicios();
     
     public FrmServicios() {
         initComponents();
-             
+        
+        servicios = crudServicios.buscarServicio(cbxTipoLavadoServicios.getSelectedItem().toString());
+        cbxEncargadoServicios = conexion.llenarCbx(cbxEncargadoServicios, "Nombre", "Empleados");
         cbxTipoLavadoServicios = conexion.llenarCbx(cbxTipoLavadoServicios, "TIpo_Servicio", "servicios");
+        
+        txtPrecioServicio.setText(String.valueOf(servicios.getValor())); 
         
         ImageIcon imgEditar = new ImageIcon("src\\Recursos\\boligrafo.png");
         editarPrecioServicio.setIcon(new ImageIcon(imgEditar.getImage().getScaledInstance(editarPrecioServicio.getWidth(), editarPrecioServicio.getHeight(), Image.SCALE_SMOOTH)));
@@ -47,7 +55,6 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel3 = new javax.swing.JLabel();
         txtTelefonoCliente = new javax.swing.JTextField();
         jSeparator3 = new javax.swing.JSeparator();
-        jLabel5 = new javax.swing.JLabel();
         jLabel4 = new javax.swing.JLabel();
         editarPrecioServicio = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
@@ -73,6 +80,7 @@ public class FrmServicios extends javax.swing.JFrame {
         cbxTipoLavadoServicios = new javax.swing.JComboBox<>();
         jLabel16 = new javax.swing.JLabel();
         cbxEncargadoServicios = new javax.swing.JComboBox<>();
+        txtPrecioServicio = new javax.swing.JTextField();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -153,15 +161,10 @@ public class FrmServicios extends javax.swing.JFrame {
         jPanel2.add(txtTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 290, 30));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 290, 30));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Light", 1, 80)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel5.setText("200000");
-        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 450, 360, 100));
-
         jLabel4.setFont(new java.awt.Font("Segoe UI Light", 1, 80)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("$");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 450, 170, 110));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, -1, 80));
 
         editarPrecioServicio.setFont(new java.awt.Font("Dialog", 1, 8)); // NOI18N
         editarPrecioServicio.setForeground(new java.awt.Color(0, 0, 0));
@@ -265,7 +268,7 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(153, 153, 153));
         jLabel14.setText("Tipo de lavado");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 170, 170, 30));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 180, 170, 30));
 
         txtCedulaCliente.setBackground(new java.awt.Color(246, 246, 251));
         txtCedulaCliente.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
@@ -286,12 +289,12 @@ public class FrmServicios extends javax.swing.JFrame {
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 120, 30));
 
         cbxTipoLavadoServicios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona" }));
-        jPanel2.add(cbxTipoLavadoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 220, 240, 30));
+        jPanel2.add(cbxTipoLavadoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, 240, 30));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(153, 153, 153));
         jLabel16.setText("Encargado");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 70, 120, 30));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 40, 120, 30));
 
         cbxEncargadoServicios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona" }));
         cbxEncargadoServicios.addActionListener(new java.awt.event.ActionListener() {
@@ -299,7 +302,15 @@ public class FrmServicios extends javax.swing.JFrame {
                 cbxEncargadoServiciosActionPerformed(evt);
             }
         });
-        jPanel2.add(cbxEncargadoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(770, 120, 210, 30));
+        jPanel2.add(cbxEncargadoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 90, 210, 30));
+
+        txtPrecioServicio.setBackground(new java.awt.Color(246, 246, 251));
+        txtPrecioServicio.setFont(new java.awt.Font("Segoe UI Light", 1, 80)); // NOI18N
+        txtPrecioServicio.setForeground(new java.awt.Color(0, 0, 0));
+        txtPrecioServicio.setText("20000");
+        txtPrecioServicio.setBorder(null);
+        txtPrecioServicio.setEnabled(false);
+        jPanel2.add(txtPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, 370, 90));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1060, 580));
 
@@ -387,8 +398,8 @@ public class FrmServicios extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnConfirmarServicio;
     private javax.swing.JButton cancelarServicio;
-    private javax.swing.JComboBox<String> cbxEncargadoServicios;
-    private javax.swing.JComboBox<String> cbxTipoLavadoServicios;
+    public javax.swing.JComboBox<String> cbxEncargadoServicios;
+    public javax.swing.JComboBox<String> cbxTipoLavadoServicios;
     private javax.swing.JLabel editarPrecioServicio;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -400,7 +411,6 @@ public class FrmServicios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
@@ -422,6 +432,7 @@ public class FrmServicios extends javax.swing.JFrame {
     public javax.swing.JTextField txtNombreCliente;
     public javax.swing.JTextField txtNombreVehiculo;
     public javax.swing.JTextField txtPlacaVehiculo;
+    public javax.swing.JTextField txtPrecioServicio;
     public javax.swing.JTextField txtTelefonoCliente;
     // End of variables declaration//GEN-END:variables
 }
