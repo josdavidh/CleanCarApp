@@ -31,6 +31,15 @@ public class FrmServicios extends javax.swing.JFrame {
 
         ImageIcon imgEditar = new ImageIcon("src\\Recursos\\boligrafo.png");
         editarPrecioServicio.setIcon(new ImageIcon(imgEditar.getImage().getScaledInstance(editarPrecioServicio.getWidth(), editarPrecioServicio.getHeight(), Image.SCALE_SMOOTH)));
+        
+        ImageIcon imgClientes = new ImageIcon("src\\Recursos\\cliente.png");
+        clientes.setIcon(new ImageIcon(imgClientes.getImage().getScaledInstance(clientes.getWidth(),clientes.getHeight(),Image.SCALE_SMOOTH)));
+        
+        ImageIcon imgEmpleados = new ImageIcon("src\\Recursos\\empleados.png");
+        empleados.setIcon(new ImageIcon(imgEmpleados.getImage().getScaledInstance(empleados.getWidth(), empleados.getHeight(), Image.SCALE_SMOOTH)));
+        
+        ImageIcon imgFin = new ImageIcon("src\\Recursos\\fin.png");
+        terminarDia.setIcon(new ImageIcon(imgFin.getImage().getScaledInstance(terminarDia.getWidth(), terminarDia.getHeight(), Image.SCALE_SMOOTH)));
     }
 
     /**
@@ -80,6 +89,12 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel16 = new javax.swing.JLabel();
         cbxEncargadoServicios = new javax.swing.JComboBox<>();
         txtPrecioServicio = new javax.swing.JTextField();
+        clientes = new javax.swing.JLabel();
+        jLabel17 = new javax.swing.JLabel();
+        jLabel18 = new javax.swing.JLabel();
+        terminarDia = new javax.swing.JLabel();
+        empleados = new javax.swing.JLabel();
+        jLabel19 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -101,7 +116,7 @@ public class FrmServicios extends javax.swing.JFrame {
                 cancelarServicioActionPerformed(evt);
             }
         });
-        jPanel2.add(cancelarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(690, 480, 160, 50));
+        jPanel2.add(cancelarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 480, 160, 50));
 
         btnConfirmarServicio.setBackground(new java.awt.Color(0, 153, 204));
         btnConfirmarServicio.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
@@ -109,7 +124,7 @@ public class FrmServicios extends javax.swing.JFrame {
         btnConfirmarServicio.setText("Confirmar");
         btnConfirmarServicio.setBorder(null);
         btnConfirmarServicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnConfirmarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 480, 180, 50));
+        jPanel2.add(btnConfirmarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 480, 180, 50));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 220, 10));
 
         txtPlacaVehiculo.setBackground(new java.awt.Color(246, 246, 251));
@@ -157,13 +172,13 @@ public class FrmServicios extends javax.swing.JFrame {
                 txtTelefonoClienteActionPerformed(evt);
             }
         });
-        jPanel2.add(txtTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 290, 30));
-        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 290, 30));
+        jPanel2.add(txtTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 260, 30));
+        jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 260, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Light", 1, 80)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("$");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 470, -1, 80));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, 80));
 
         editarPrecioServicio.setFont(new java.awt.Font("Dialog", 1, 8)); // NOI18N
         editarPrecioServicio.setForeground(new java.awt.Color(0, 0, 0));
@@ -175,7 +190,7 @@ public class FrmServicios extends javax.swing.JFrame {
                 editarPrecioServicioMouseClicked(evt);
             }
         });
-        jPanel2.add(editarPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, -1, -1));
+        jPanel2.add(editarPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 330, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
@@ -185,7 +200,7 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel7.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
         jLabel7.setForeground(new java.awt.Color(0, 0, 0));
         jLabel7.setText("Servicio");
-        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 0, 100, 30));
+        jPanel2.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 10, 100, 30));
 
         jLabel8.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
         jLabel8.setForeground(new java.awt.Color(0, 0, 0));
@@ -272,7 +287,7 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel14.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel14.setForeground(new java.awt.Color(153, 153, 153));
         jLabel14.setText("Tipo de lavado");
-        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 180, 170, 30));
+        jPanel2.add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 190, 170, 30));
 
         txtCedulaCliente.setBackground(new java.awt.Color(246, 246, 251));
         txtCedulaCliente.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
@@ -298,12 +313,12 @@ public class FrmServicios extends javax.swing.JFrame {
                 cbxTipoLavadoServiciosItemStateChanged(evt);
             }
         });
-        jPanel2.add(cbxTipoLavadoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, 240, 30));
+        jPanel2.add(cbxTipoLavadoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 240, 240, 30));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel16.setForeground(new java.awt.Color(153, 153, 153));
         jLabel16.setText("Encargado");
-        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 40, 120, 30));
+        jPanel2.add(jLabel16, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 50, 120, 30));
 
         cbxEncargadoServicios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona" }));
         cbxEncargadoServicios.addActionListener(new java.awt.event.ActionListener() {
@@ -311,7 +326,7 @@ public class FrmServicios extends javax.swing.JFrame {
                 cbxEncargadoServiciosActionPerformed(evt);
             }
         });
-        jPanel2.add(cbxEncargadoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 90, 210, 30));
+        jPanel2.add(cbxEncargadoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(720, 100, 210, 30));
 
         txtPrecioServicio.setBackground(new java.awt.Color(246, 246, 251));
         txtPrecioServicio.setFont(new java.awt.Font("Segoe UI Light", 1, 80)); // NOI18N
@@ -319,7 +334,34 @@ public class FrmServicios extends javax.swing.JFrame {
         txtPrecioServicio.setText("0.0");
         txtPrecioServicio.setBorder(null);
         txtPrecioServicio.setEnabled(false);
-        jPanel2.add(txtPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, 370, 90));
+        jPanel2.add(txtPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 370, 90));
+
+        clientes.setText("(Clientes)");
+        clientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 80, 70));
+
+        jLabel17.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel17.setText("Ver Clientes");
+        jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, 70, 20));
+
+        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel18.setText("Terminar Día");
+        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 540, 90, -1));
+
+        terminarDia.setText("(empleados)");
+        terminarDia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(terminarDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, 80, 70));
+
+        empleados.setText("(empleados)");
+        empleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(empleados, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 460, 80, 70));
+
+        jLabel19.setForeground(new java.awt.Color(0, 0, 0));
+        jLabel19.setText("Ver Empleados");
+        jLabel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 540, 90, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1060, 580));
 
@@ -422,7 +464,9 @@ public class FrmServicios extends javax.swing.JFrame {
     private javax.swing.JButton cancelarServicio;
     public javax.swing.JComboBox<String> cbxEncargadoServicios;
     public javax.swing.JComboBox<String> cbxTipoLavadoServicios;
+    private javax.swing.JLabel clientes;
     private javax.swing.JLabel editarPrecioServicio;
+    private javax.swing.JLabel empleados;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -430,6 +474,9 @@ public class FrmServicios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
+    private javax.swing.JLabel jLabel17;
+    private javax.swing.JLabel jLabel18;
+    private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
@@ -447,6 +494,7 @@ public class FrmServicios extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
+    private javax.swing.JLabel terminarDia;
     public javax.swing.JTextField txtCedulaCliente;
     public javax.swing.JTextField txtColorVehiculo;
     public javax.swing.JTextField txtMarcaVehiculo;
