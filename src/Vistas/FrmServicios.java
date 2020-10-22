@@ -9,6 +9,7 @@ import com.pascualbravo.models.Conexion;
 import com.pascualbravo.models.CrudServicios;
 import com.pascualbravo.models.Servicios;
 import java.awt.Image;
+import java.awt.event.ItemEvent;
 import javax.swing.ImageIcon;
 
 /**
@@ -20,16 +21,13 @@ public class FrmServicios extends javax.swing.JFrame {
     Conexion conexion = new Conexion();
     CrudServicios crudServicios = new CrudServicios();
     Servicios servicios = new Servicios();
-    
+
     public FrmServicios() {
         initComponents();
-        
-        servicios = crudServicios.buscarServicio(cbxTipoLavadoServicios.getSelectedItem().toString());
+
         cbxEncargadoServicios = conexion.llenarCbx(cbxEncargadoServicios, "Nombre", "Empleados");
         cbxTipoLavadoServicios = conexion.llenarCbx(cbxTipoLavadoServicios, "TIpo_Servicio", "servicios");
-        
-        txtPrecioServicio.setText(String.valueOf(servicios.getValor())); 
-        
+
         ImageIcon imgEditar = new ImageIcon("src\\Recursos\\boligrafo.png");
         editarPrecioServicio.setIcon(new ImageIcon(imgEditar.getImage().getScaledInstance(editarPrecioServicio.getWidth(), editarPrecioServicio.getHeight(), Image.SCALE_SMOOTH)));
     }
@@ -289,6 +287,11 @@ public class FrmServicios extends javax.swing.JFrame {
         jPanel2.add(jLabel15, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 30, 120, 30));
 
         cbxTipoLavadoServicios.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Selecciona" }));
+        cbxTipoLavadoServicios.addItemListener(new java.awt.event.ItemListener() {
+            public void itemStateChanged(java.awt.event.ItemEvent evt) {
+                cbxTipoLavadoServiciosItemStateChanged(evt);
+            }
+        });
         jPanel2.add(cbxTipoLavadoServicios, new org.netbeans.lib.awtextra.AbsoluteConstraints(760, 230, 240, 30));
 
         jLabel16.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
@@ -307,7 +310,7 @@ public class FrmServicios extends javax.swing.JFrame {
         txtPrecioServicio.setBackground(new java.awt.Color(246, 246, 251));
         txtPrecioServicio.setFont(new java.awt.Font("Segoe UI Light", 1, 80)); // NOI18N
         txtPrecioServicio.setForeground(new java.awt.Color(0, 0, 0));
-        txtPrecioServicio.setText("20000");
+        txtPrecioServicio.setText("0.0");
         txtPrecioServicio.setBorder(null);
         txtPrecioServicio.setEnabled(false);
         jPanel2.add(txtPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 460, 370, 90));
@@ -358,6 +361,14 @@ public class FrmServicios extends javax.swing.JFrame {
     private void cbxEncargadoServiciosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbxEncargadoServiciosActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_cbxEncargadoServiciosActionPerformed
+
+    private void cbxTipoLavadoServiciosItemStateChanged(java.awt.event.ItemEvent evt) {//GEN-FIRST:event_cbxTipoLavadoServiciosItemStateChanged
+
+        if (evt.getStateChange() == ItemEvent.SELECTED) {
+            servicios = crudServicios.buscarServicio(cbxTipoLavadoServicios.getSelectedItem().toString());
+            txtPrecioServicio.setText(String.valueOf(servicios.getValor()));
+        }
+    }//GEN-LAST:event_cbxTipoLavadoServiciosItemStateChanged
 
     /**
      * @param args the command line arguments
