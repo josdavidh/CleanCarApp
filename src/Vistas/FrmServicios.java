@@ -11,6 +11,7 @@ import com.pascualbravo.models.Servicios;
 import java.awt.Image;
 import java.awt.event.ItemEvent;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -169,6 +170,11 @@ public class FrmServicios extends javax.swing.JFrame {
         editarPrecioServicio.setText("(Incono editar)");
         editarPrecioServicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         editarPrecioServicio.setPreferredSize(new java.awt.Dimension(70, 70));
+        editarPrecioServicio.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                editarPrecioServicioMouseClicked(evt);
+            }
+        });
         jPanel2.add(editarPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(540, 460, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
@@ -369,6 +375,11 @@ public class FrmServicios extends javax.swing.JFrame {
             txtPrecioServicio.setText(String.valueOf(servicios.getValor()));
         }
     }//GEN-LAST:event_cbxTipoLavadoServiciosItemStateChanged
+
+    private void editarPrecioServicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editarPrecioServicioMouseClicked
+
+        txtPrecioServicio.setText(JOptionPane.showInputDialog(null, "Ingrese un nuevo valor para el servico"));
+    }//GEN-LAST:event_editarPrecioServicioMouseClicked
 
     /**
      * @param args the command line arguments
