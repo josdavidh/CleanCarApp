@@ -31,13 +31,13 @@ public class FrmServicios extends javax.swing.JFrame {
 
         ImageIcon imgEditar = new ImageIcon("src\\Recursos\\boligrafo.png");
         editarPrecioServicio.setIcon(new ImageIcon(imgEditar.getImage().getScaledInstance(editarPrecioServicio.getWidth(), editarPrecioServicio.getHeight(), Image.SCALE_SMOOTH)));
-        
+
         ImageIcon imgClientes = new ImageIcon("src\\Recursos\\cliente.png");
-        clientes.setIcon(new ImageIcon(imgClientes.getImage().getScaledInstance(clientes.getWidth(),clientes.getHeight(),Image.SCALE_SMOOTH)));
-        
+        clientes.setIcon(new ImageIcon(imgClientes.getImage().getScaledInstance(clientes.getWidth(), clientes.getHeight(), Image.SCALE_SMOOTH)));
+
         ImageIcon imgEmpleados = new ImageIcon("src\\Recursos\\empleados.png");
         empleados.setIcon(new ImageIcon(imgEmpleados.getImage().getScaledInstance(empleados.getWidth(), empleados.getHeight(), Image.SCALE_SMOOTH)));
-        
+
         ImageIcon imgFin = new ImageIcon("src\\Recursos\\fin.png");
         terminarDia.setIcon(new ImageIcon(imgFin.getImage().getScaledInstance(terminarDia.getWidth(), terminarDia.getHeight(), Image.SCALE_SMOOTH)));
     }
@@ -53,7 +53,7 @@ public class FrmServicios extends javax.swing.JFrame {
 
         jPanel1 = new javax.swing.JPanel();
         jPanel2 = new javax.swing.JPanel();
-        cancelarServicio = new javax.swing.JButton();
+        btnCancelarServicio = new javax.swing.JButton();
         btnConfirmarServicio = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
         txtPlacaVehiculo = new javax.swing.JTextField();
@@ -95,6 +95,7 @@ public class FrmServicios extends javax.swing.JFrame {
         terminarDia = new javax.swing.JLabel();
         empleados = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
+        jLabel5 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -105,18 +106,18 @@ public class FrmServicios extends javax.swing.JFrame {
         jPanel2.setBackground(new java.awt.Color(246, 246, 251));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        cancelarServicio.setBackground(new java.awt.Color(0, 153, 204));
-        cancelarServicio.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
-        cancelarServicio.setForeground(new java.awt.Color(0, 0, 0));
-        cancelarServicio.setText("Cancelar");
-        cancelarServicio.setBorder(null);
-        cancelarServicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        cancelarServicio.addActionListener(new java.awt.event.ActionListener() {
+        btnCancelarServicio.setBackground(new java.awt.Color(0, 153, 204));
+        btnCancelarServicio.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
+        btnCancelarServicio.setForeground(new java.awt.Color(0, 0, 0));
+        btnCancelarServicio.setText("Cancelar");
+        btnCancelarServicio.setBorder(null);
+        btnCancelarServicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCancelarServicio.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                cancelarServicioActionPerformed(evt);
+                btnCancelarServicioActionPerformed(evt);
             }
         });
-        jPanel2.add(cancelarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 480, 160, 50));
+        jPanel2.add(btnCancelarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 500, 160, 50));
 
         btnConfirmarServicio.setBackground(new java.awt.Color(0, 153, 204));
         btnConfirmarServicio.setFont(new java.awt.Font("Segoe UI Semibold", 1, 24)); // NOI18N
@@ -124,7 +125,7 @@ public class FrmServicios extends javax.swing.JFrame {
         btnConfirmarServicio.setText("Confirmar");
         btnConfirmarServicio.setBorder(null);
         btnConfirmarServicio.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(btnConfirmarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 480, 180, 50));
+        jPanel2.add(btnConfirmarServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(810, 500, 180, 50));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 110, 220, 10));
 
         txtPlacaVehiculo.setBackground(new java.awt.Color(246, 246, 251));
@@ -157,10 +158,10 @@ public class FrmServicios extends javax.swing.JFrame {
         jPanel2.add(txtNombreCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 160, 240, 30));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 200, 240, 10));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
-        jLabel3.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel3.setText("Teléfono de contacto");
-        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 220, 30));
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 36)); // NOI18N
+        jLabel3.setForeground(new java.awt.Color(255, 102, 102));
+        jLabel3.setText("Total");
+        jPanel2.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(370, 340, 90, 40));
 
         txtTelefonoCliente.setBackground(new java.awt.Color(246, 246, 251));
         txtTelefonoCliente.setFont(new java.awt.Font("Segoe UI Light", 1, 18)); // NOI18N
@@ -172,13 +173,18 @@ public class FrmServicios extends javax.swing.JFrame {
                 txtTelefonoClienteActionPerformed(evt);
             }
         });
+        txtTelefonoCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtTelefonoClienteKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtTelefonoCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 260, 260, 30));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 300, 260, 30));
 
         jLabel4.setFont(new java.awt.Font("Segoe UI Light", 1, 80)); // NOI18N
         jLabel4.setForeground(new java.awt.Color(0, 0, 0));
         jLabel4.setText("$");
-        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 340, -1, 80));
+        jPanel2.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(470, 370, 50, 80));
 
         editarPrecioServicio.setFont(new java.awt.Font("Dialog", 1, 8)); // NOI18N
         editarPrecioServicio.setForeground(new java.awt.Color(0, 0, 0));
@@ -190,7 +196,7 @@ public class FrmServicios extends javax.swing.JFrame {
                 editarPrecioServicioMouseClicked(evt);
             }
         });
-        jPanel2.add(editarPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 330, -1, -1));
+        jPanel2.add(editarPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(870, 370, -1, -1));
 
         jLabel6.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
         jLabel6.setForeground(new java.awt.Color(153, 153, 153));
@@ -263,6 +269,11 @@ public class FrmServicios extends javax.swing.JFrame {
                 txtModeloVehiculoActionPerformed(evt);
             }
         });
+        txtModeloVehiculo.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtModeloVehiculoKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtModeloVehiculo, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 350, 110, 30));
         jPanel2.add(jSeparator6, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 390, 110, 10));
 
@@ -297,6 +308,11 @@ public class FrmServicios extends javax.swing.JFrame {
         txtCedulaCliente.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtCedulaClienteActionPerformed(evt);
+            }
+        });
+        txtCedulaCliente.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtCedulaClienteKeyTyped(evt);
             }
         });
         jPanel2.add(txtCedulaCliente, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 70, 250, 30));
@@ -334,7 +350,7 @@ public class FrmServicios extends javax.swing.JFrame {
         txtPrecioServicio.setText("0.0");
         txtPrecioServicio.setBorder(null);
         txtPrecioServicio.setEnabled(false);
-        jPanel2.add(txtPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(460, 330, 370, 90));
+        jPanel2.add(txtPrecioServicio, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 380, 330, 70));
 
         clientes.setText("(Clientes)");
         clientes.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -363,6 +379,11 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel19.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         jPanel2.add(jLabel19, new org.netbeans.lib.awtextra.AbsoluteConstraints(180, 540, 90, -1));
 
+        jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
+        jLabel5.setText("Teléfono de contacto");
+        jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 220, 30));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1060, 580));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 600));
@@ -370,9 +391,9 @@ public class FrmServicios extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void cancelarServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cancelarServicioActionPerformed
+    private void btnCancelarServicioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCancelarServicioActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_cancelarServicioActionPerformed
+    }//GEN-LAST:event_btnCancelarServicioActionPerformed
 
     private void txtPlacaVehiculoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtPlacaVehiculoActionPerformed
         // TODO add your handling code here:
@@ -420,8 +441,48 @@ public class FrmServicios extends javax.swing.JFrame {
 
     private void editarPrecioServicioMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_editarPrecioServicioMouseClicked
 
-        txtPrecioServicio.setText(JOptionPane.showInputDialog(null, "Ingrese un nuevo valor para el servico"));
+        double precio;
+        try {
+            precio = Double.valueOf(JOptionPane.showInputDialog(null, "Ingrese un nuevo valor para el servico"));
+            txtPrecioServicio.setText(String.valueOf(precio));
+        } catch (Exception e) {
+            JOptionPane.showMessageDialog(null, "Debe escribir solo numeros");
+        }
+
     }//GEN-LAST:event_editarPrecioServicioMouseClicked
+
+    private void txtCedulaClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtCedulaClienteKeyTyped
+        char validar = evt.getKeyChar();
+
+        if (Character.isLetter(validar)) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(rootPane, "Escriba solo numeros");
+        }
+    }//GEN-LAST:event_txtCedulaClienteKeyTyped
+
+    private void txtTelefonoClienteKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtTelefonoClienteKeyTyped
+        char validar = evt.getKeyChar();
+
+        if (Character.isLetter(validar)) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(rootPane, "Escriba solo numeros");
+        }
+    }//GEN-LAST:event_txtTelefonoClienteKeyTyped
+
+    private void txtModeloVehiculoKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtModeloVehiculoKeyTyped
+        char validar = evt.getKeyChar();
+
+        if (Character.isLetter(validar)) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(rootPane, "Escriba solo numeros");
+        }
+    }//GEN-LAST:event_txtModeloVehiculoKeyTyped
 
     /**
      * @param args the command line arguments
@@ -460,8 +521,8 @@ public class FrmServicios extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    public javax.swing.JButton btnCancelarServicio;
     public javax.swing.JButton btnConfirmarServicio;
-    private javax.swing.JButton cancelarServicio;
     public javax.swing.JComboBox<String> cbxEncargadoServicios;
     public javax.swing.JComboBox<String> cbxTipoLavadoServicios;
     private javax.swing.JLabel clientes;
@@ -480,6 +541,7 @@ public class FrmServicios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
     private javax.swing.JLabel jLabel4;
+    private javax.swing.JLabel jLabel5;
     private javax.swing.JLabel jLabel6;
     private javax.swing.JLabel jLabel7;
     private javax.swing.JLabel jLabel8;
