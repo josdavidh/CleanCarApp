@@ -7,10 +7,10 @@ import javax.swing.JOptionPane;
 
 public class Conexion {
 
-    private final String base = "cleancardb";
+    private final String base = "cleancardb1";
     private final String username = "root";
-    private final String password = "rrj69c";
-    private final String URL = "jdbc:mysql://localhost:3306/" + base;
+    private final String password = "";
+    private final String URL = "jdbc:mysql://localhost:3307/" + base;
 
     private Connection con = null;
     private PreparedStatement ps;
@@ -50,7 +50,5 @@ public class Conexion {
         }
         return cbx;
     }
-    
-
 
 }

@@ -1,6 +1,8 @@
 package com.pascualbravo.app;
 
+import com.pascualbravo.controller.ListaEmp_Clnt;
 import Vistas.FrmServicios;
+import Vistas.listaEmpleados;
 import com.pascualbravo.controller.ControllerServicios;
 import com.pascualbravo.models.Clientes;
 import com.pascualbravo.models.CrudClientes;
@@ -29,11 +31,16 @@ public class CleanCarApplication {
         CrudRecibo crudRecb = new CrudRecibo();
         CrudServicios crudServ = new CrudServicios();
         FrmServicios frmServ = new FrmServicios();
-        
+        //quitar esto
+        listaEmpleados viewLista= new listaEmpleados();
         ControllerServicios controllerClnts = new ControllerServicios(clnts,vehicl,emp,recb, serv,
                 crudClnts,crudEmp,crudVehicl,crudRecb,crudServ,frmServ);
-        
+        //quitar
+        ListaEmp_Clnt lista =  new ListaEmp_Clnt(viewLista);
+    
         controllerClnts.iniciar();
-        frmServ.setVisible(true);
+        //quitar
+        viewLista.setVisible(true);
+        //frmServ.setVisible(true);  
     }
 }
