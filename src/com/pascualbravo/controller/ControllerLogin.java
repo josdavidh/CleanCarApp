@@ -1,13 +1,12 @@
 package com.pascualbravo.controller;
 
+import Vistas.ActualizarAdmins;
 import Vistas.FrmLogin;
 import Vistas.FrmServicios;
 import com.pascualbravo.models.Administradores;
 import com.pascualbravo.models.CrudAdministradores;
-import java.awt.HeadlessException;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import static java.util.Objects.hash;
 import javax.swing.JOptionPane;
 
 public class ControllerLogin implements ActionListener {
@@ -15,12 +14,20 @@ public class ControllerLogin implements ActionListener {
     private Administradores administradores;
     private CrudAdministradores crudAdministradores;
     private FrmLogin frmLogin;
+    private FrmServicios frmServicios;
+    private ActualizarAdmins admins;
+
+    public static String password;
+    public static int cc;
+
+    ControllerVistasRun controllerServicios = new ControllerVistasRun();
 
     public ControllerLogin(Administradores administradores,
-            CrudAdministradores crudAdministradores, FrmLogin frmLogin) {
+            CrudAdministradores crudAdministradores, FrmLogin frmLogin, FrmServicios frmServicios) {
         this.administradores = administradores;
         this.crudAdministradores = crudAdministradores;
         this.frmLogin = frmLogin;
+        this.frmServicios = frmServicios;
 
         this.frmLogin.btnIgresar.addActionListener(this);
 
@@ -37,31 +44,33 @@ public class ControllerLogin implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        try {
-            String password;
-            int cc;
-            if (!frmLogin.txtUsuario.getText().isEmpty() && !frmLogin.Jpassword.equals("")) {
+        if (e.getSource() == frmLogin.btnIgresar) {
+            try {
+                if (!frmLogin.txtUsuario.getText().isEmpty() && !frmLogin.Jpassword.equals("")) {
 
-                password = new String(frmLogin.Jpassword.getPassword());
-                cc = Integer.parseInt(frmLogin.txtUsuario.getText());
+                    password = new String(frmLogin.Jpassword.getPassword());
+                    cc = Integer.parseInt(frmLogin.txtUsuario.getText());
 
-                if (crudAdministradores.BuscarPerfil(cc, password)) {
-                    frmLogin.dispose();
+                    administradores = crudAdministradores.BuscarPerfil(ControllerLogin.cc, ControllerLogin.password);
+                    if (administradores.getNombres() != null) {
+                        frmLogin.dispose();
 
-                    FrmServicios frm = new FrmServicios();
-                    frm.setVisible(true);
+                        //controllerServicios.runFrmServicios();
+                        
+                        controllerServicios.runFrmActualizarAdmin();
+                        
+                    } else {
+                        JOptionPane.showMessageDialog(null, "Datos Incorrectos");
+                        limpiar();
+                    }
+
                 } else {
-                    JOptionPane.showMessageDialog(null, "Datos Incorrectos");
-                    limpiar();
+                    JOptionPane.showMessageDialog(null, "Debe llenar todos los campos");
                 }
-
-            } else {
-                JOptionPane.showMessageDialog(null, "Debe llenar todos los campos");
+            } catch (NumberFormatException es) {
+                JOptionPane.showMessageDialog(null, "El usuario debe ser numerico " + es, "Error!", JOptionPane.ERROR_MESSAGE);
             }
-        }catch (NumberFormatException es) {
-            JOptionPane.showMessageDialog(null, "El usuario debe ser numerico "+es, "Error!", JOptionPane.ERROR_MESSAGE);
         }
-
     }
 
 }

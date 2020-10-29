@@ -1,5 +1,6 @@
 package com.pascualbravo.controller;
 
+
 import Vistas.FrmServicios;
 import com.pascualbravo.models.Clientes;
 import com.pascualbravo.models.CrudClientes;
@@ -28,6 +29,7 @@ public class ControllerServicios implements ActionListener {
     private CrudRecibo crudRecibo;
     private CrudServicios crudServicios;
     private FrmServicios frmServicios;
+    private ControllerAdministrador controllerAdmin;
 
     public ControllerServicios(Clientes clnts, Vehiculos vehicl, Empleados emp, Recibo recb,Servicios serv, CrudClientes crudClnts, 
             CrudEmpleados crudEmp, CrudVehiculos crudVehicl,CrudRecibo crudRecb,CrudServicios crudServ,FrmServicios frmServ) {
@@ -43,9 +45,9 @@ public class ControllerServicios implements ActionListener {
         this.crudRecibo = crudRecb;
         this.crudServicios = crudServ;
         this.frmServicios = frmServ;
-
+        this.controllerAdmin = controllerAdmin;
+        
         this.frmServicios.btnConfirmarServicio.addActionListener(this);
-
     }
 
     public void limpiar() {
@@ -113,5 +115,4 @@ public class ControllerServicios implements ActionListener {
 
         }
     }
-
 }

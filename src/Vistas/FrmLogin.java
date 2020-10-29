@@ -103,6 +103,11 @@ public class FrmLogin extends javax.swing.JFrame {
                 xMouseClicked(evt);
             }
         });
+        x.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                xActionPerformed(evt);
+            }
+        });
         jPanel2.add(x, new org.netbeans.lib.awtextra.AbsoluteConstraints(410, 0, 30, -1));
 
         Jpassword.setBackground(new java.awt.Color(246, 246, 251));
@@ -227,6 +232,10 @@ public class FrmLogin extends javax.swing.JFrame {
 
         this.setLocation(x - xx, y - xy);
     }//GEN-LAST:event_jPanel3MouseDragged
+
+    private void xActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_xActionPerformed
 
     /**
      * @param args the command line arguments
