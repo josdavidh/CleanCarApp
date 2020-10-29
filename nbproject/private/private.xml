@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project-private xmlns="http://www.netbeans.org/ns/project-private/1">
-    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="2">
         <file>
             <url>src/com/pascualbravo/models/CrudVehiculos.java</url>
             <bookmark id="1">
@@ -13,11 +13,19 @@
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
 <<<<<<< HEAD
+<<<<<<< HEAD
             <file>file:/C:/Users/USER/Documents/NetBeansProjects/CleanCarApp/src/Vistas/FrmServicios.java</file>
 =======
             <file>file:/C:/Users/LENOVO/Documents/Universidad/herramientas3/proyecto/CleanCarApp/src/com/pascualbravo/controller/ListaEmp_Clnt.java</file>
             <file>file:/C:/Users/LENOVO/Documents/Universidad/herramientas3/proyecto/CleanCarApp/src/Vistas/listaEmpleados.java</file>
 >>>>>>> code
+=======
+            <file>file:/C:/GitHub/cleanCar/CleanCarApp/src/com/pascualbravo/models/CrudAdministradores.java</file>
+            <file>file:/C:/GitHub/cleanCar/CleanCarApp/src/com/pascualbravo/controller/ControllerLogin.java</file>
+            <file>file:/C:/GitHub/cleanCar/CleanCarApp/src/com/pascualbravo/controller/ControllerVistasRun.java</file>
+            <file>file:/C:/GitHub/cleanCar/CleanCarApp/src/com/pascualbravo/controller/ControllerAdministrador.java</file>
+            <file>file:/C:/GitHub/cleanCar/CleanCarApp/src/com/pascualbravo/app/CleanCarApplication.java</file>
+>>>>>>> Junior
         </group>
     </open-files>
 </project-private>
