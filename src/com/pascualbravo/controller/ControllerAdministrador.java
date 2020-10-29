@@ -28,13 +28,6 @@ public class ControllerAdministrador implements ActionListener {
 
         this.prueba.btnPrueba.addActionListener(this);
         this.admins.btnActualizar.addActionListener(this);
-
-        admins.setVisible(true);
-        administradores = crudAdministradores.BuscarPerfil(cc, password);
-        admins.Cedula.setText(String.valueOf(administradores.getCedulaAdmin()));
-        admins.Nombre.setText(administradores.getNombres());
-        admins.Apellidos.setText(administradores.getApellidos());
-        admins.password.setText(administradores.getPassword());
     }
 
     public void iniciar() {
@@ -44,7 +37,15 @@ public class ControllerAdministrador implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         JButton option = (JButton) e.getSource();
-        //if (prueba.btnPrueba == option) {
+        if (prueba.btnPrueba == option) {
+            admins.setVisible(true);
+            administradores = crudAdministradores.BuscarPerfil(cc, password);
+            admins.Cedula.setText(String.valueOf(administradores.getCedulaAdmin()));
+            admins.Nombre.setText(administradores.getNombres());
+            admins.Apellidos.setText(administradores.getApellidos());
+            admins.password.setText(administradores.getPassword());
+
+        }
 
         if (admins.btnActualizar == option) {
             try {
@@ -61,7 +62,6 @@ public class ControllerAdministrador implements ActionListener {
                 JOptionPane.showMessageDialog(null, "Error! " + es);
             }
         }
-        // }
     }
 
     public void actualizar() {

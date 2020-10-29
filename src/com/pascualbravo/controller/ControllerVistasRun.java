@@ -46,6 +46,6 @@ public class ControllerVistasRun {
         ControllerAdministrador controllerAdmin = new ControllerAdministrador(admin, crud, adminf,prueba);
 
         controllerAdmin.iniciar();
-        adminf.setVisible(true);
+        prueba.setVisible(true);
     }
 }
