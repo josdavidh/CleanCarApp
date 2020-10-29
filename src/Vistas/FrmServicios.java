@@ -28,7 +28,8 @@ public class FrmServicios extends javax.swing.JFrame {
 
         cbxEncargadoServicios = conexion.llenarCbx(cbxEncargadoServicios, "Nombre", "Empleados");
         cbxTipoLavadoServicios = conexion.llenarCbx(cbxTipoLavadoServicios, "TIpo_Servicio", "servicios");
-
+        
+        this.setLocationRelativeTo(null);
         ImageIcon imgEditar = new ImageIcon("src\\Recursos\\boligrafo.png");
         editarPrecioServicio.setIcon(new ImageIcon(imgEditar.getImage().getScaledInstance(editarPrecioServicio.getWidth(), editarPrecioServicio.getHeight(), Image.SCALE_SMOOTH)));
         

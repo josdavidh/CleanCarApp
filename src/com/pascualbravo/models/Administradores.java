@@ -7,6 +7,8 @@ public class Administradores {
     private String nombres;
     
     private String apellidos; 
+    
+    private String password;
 
     /**
      * @return the cedulaAdmin
@@ -48,5 +50,19 @@ public class Administradores {
      */
     public void setApellidos(String apellidos) {
         this.apellidos = apellidos;
+    }
+
+    /**
+     * @return the password
+     */
+    public String getPassword() {
+        return password;
+    }
+
+    /**
+     * @param password the password to set
+     */
+    public void setPassword(String password) {
+        this.password = password;
     }
 }
