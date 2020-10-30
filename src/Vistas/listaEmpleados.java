@@ -52,6 +52,7 @@ public class listaEmpleados extends javax.swing.JFrame {
         jSeparator3 = new javax.swing.JSeparator();
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
+        btnAtras = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
@@ -220,6 +221,9 @@ public class listaEmpleados extends javax.swing.JFrame {
         jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 370, 220, 10));
 
+        btnAtras.setText("Atras");
+        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 550, 110, -1));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1060, 590));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, -4, 1080, 610));
@@ -298,6 +302,7 @@ public class listaEmpleados extends javax.swing.JFrame {
     public javax.swing.JLabel JlblSalario;
     public javax.swing.JTextField TxtCedula;
     public javax.swing.JButton btnActualizar;
+    public javax.swing.JButton btnAtras;
     public javax.swing.JButton btnBorrar;
     public javax.swing.JButton btnNuevoEmp;
     private javax.swing.JLabel jLabel2;

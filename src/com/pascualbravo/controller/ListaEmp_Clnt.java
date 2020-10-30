@@ -5,6 +5,7 @@ package com.pascualbravo.controller;
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
+import Vistas.FrmServicios;
 import Vistas.NuevoEmpleado;
 import Vistas.listaEmpleados;
 import com.mysql.jdbc.PreparedStatement;
@@ -45,7 +46,7 @@ public class ListaEmp_Clnt implements ChangeListener, MouseListener, ActionListe
     private NuevoEmpleado frmNEm = new NuevoEmpleado();
     private Clientes cliente;
     private Empleados empleado;
-    
+    private FrmServicios frmSer = new FrmServicios();
 
     public ListaEmp_Clnt(listaEmpleados lista) {
         bg = new ButtonGroup();
@@ -65,6 +66,7 @@ public class ListaEmp_Clnt implements ChangeListener, MouseListener, ActionListe
         this.lista.txtSalario.addKeyListener(this);
         this.lista.txtJefe.addKeyListener(this);
         this.lista.txtBuscarCedula.addKeyListener(this);
+        this.lista.btnAtras.addActionListener(this);
         
     }
 
@@ -213,6 +215,10 @@ public class ListaEmp_Clnt implements ChangeListener, MouseListener, ActionListe
 
     @Override
     public void actionPerformed(ActionEvent arg0) {
+        if (arg0.getSource() == lista.btnAtras) {
+            frmSer.setVisible(true);
+            lista.setVisible(false);
+        }
         
         if (arg0.getSource() == lista.btnNuevoEmp) {
             frmNEm.setVisible(true);
