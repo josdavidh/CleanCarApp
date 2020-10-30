@@ -39,7 +39,7 @@ import javax.swing.text.MaskFormatter;
  */
 public class ListaEmp_Clnt implements ChangeListener, MouseListener, ActionListener, KeyListener {
 
-    private listaEmpleados lista = new listaEmpleados();
+    public listaEmpleados lista = new listaEmpleados();
     private ButtonGroup bg;
     private CrudClientes crudClnt = new CrudClientes();
     private CrudEmpleados crudEmp = new CrudEmpleados();
@@ -47,7 +47,9 @@ public class ListaEmp_Clnt implements ChangeListener, MouseListener, ActionListe
     private Clientes cliente;
     private Empleados empleado;
     private FrmServicios frmSer = new FrmServicios();
-
+    
+     ControllerVistasRun controllerServicios = new ControllerVistasRun();
+    
     public ListaEmp_Clnt(listaEmpleados lista) {
         bg = new ButtonGroup();
         this.lista = lista;
@@ -67,6 +69,7 @@ public class ListaEmp_Clnt implements ChangeListener, MouseListener, ActionListe
         this.lista.txtJefe.addKeyListener(this);
         this.lista.txtBuscarCedula.addKeyListener(this);
         this.lista.btnAtras.addActionListener(this);
+        
         
     }
 
@@ -114,6 +117,11 @@ public class ListaEmp_Clnt implements ChangeListener, MouseListener, ActionListe
     frmNEm.txtNom.setText("");
     frmNEm.txtSalar.setText("");
     
+    }
+    
+       public void iniciar() {
+
+        lista.setLocationRelativeTo(null);
     }
 
     // este metodo carga los datos en la tabla
@@ -215,9 +223,11 @@ public class ListaEmp_Clnt implements ChangeListener, MouseListener, ActionListe
 
     @Override
     public void actionPerformed(ActionEvent arg0) {
+        
         if (arg0.getSource() == lista.btnAtras) {
-            frmSer.setVisible(true);
-            lista.setVisible(false);
+            //frmSer.setVisible(true);
+            lista.dispose();
+            controllerServicios.runFrmServicios();
         }
         
         if (arg0.getSource() == lista.btnNuevoEmp) {

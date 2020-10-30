@@ -3,6 +3,7 @@ package com.pascualbravo.controller;
 import Vistas.ActualizarAdmins;
 import Vistas.FrmServicios;
 import Vistas.Prueba;
+import Vistas.listaEmpleados;
 import com.pascualbravo.models.Administradores;
 import com.pascualbravo.models.Clientes;
 import com.pascualbravo.models.CrudAdministradores;
@@ -30,6 +31,7 @@ public class ControllerVistasRun {
         CrudRecibo crudRecb = new CrudRecibo();
         CrudServicios crudServ = new CrudServicios();
         FrmServicios frmServ = new FrmServicios();
+        
 
         ControllerServicios controllerClnts = new ControllerServicios(clnts, vehicl, emp, recb, serv,
                 crudClnts, crudEmp, crudVehicl, crudRecb, crudServ, frmServ);
@@ -38,7 +40,7 @@ public class ControllerVistasRun {
         frmServ.setVisible(true);
     }
 
-    public void runFrmActualizarAdmin() {
+    /*public void runFrmActualizarAdmin() {
         Administradores admin = new Administradores();
         CrudAdministradores crud = new CrudAdministradores();
         ActualizarAdmins adminf = new ActualizarAdmins();
@@ -47,5 +49,13 @@ public class ControllerVistasRun {
 
         controllerAdmin.iniciar();
         prueba.setVisible(true);
-    }
+    }*/
+    
+     public void runFrmLista() {
+     listaEmpleados lista = new listaEmpleados();
+     ListaEmp_Clnt controlerLista = new ListaEmp_Clnt(lista);
+     controlerLista.iniciar();
+     lista.setVisible(true);
+     
+     }
 }

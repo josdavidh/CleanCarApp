@@ -39,8 +39,7 @@ public class FrmServicios extends javax.swing.JFrame {
         ImageIcon imgEmpleados = new ImageIcon("src\\Recursos\\empleados.png");
         empleados.setIcon(new ImageIcon(imgEmpleados.getImage().getScaledInstance(empleados.getWidth(), empleados.getHeight(), Image.SCALE_SMOOTH)));
 
-        ImageIcon imgFin = new ImageIcon("src\\Recursos\\fin.png");
-        terminarDia.setIcon(new ImageIcon(imgFin.getImage().getScaledInstance(terminarDia.getWidth(), terminarDia.getHeight(), Image.SCALE_SMOOTH)));
+      
     }
 
     /**
@@ -92,8 +91,6 @@ public class FrmServicios extends javax.swing.JFrame {
         txtPrecioServicio = new javax.swing.JTextField();
         clientes = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        terminarDia = new javax.swing.JLabel();
         empleados = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
@@ -358,18 +355,9 @@ public class FrmServicios extends javax.swing.JFrame {
         jPanel2.add(clientes, new org.netbeans.lib.awtextra.AbsoluteConstraints(50, 460, 80, 70));
 
         jLabel17.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel17.setText("Ver Clientes");
+        jLabel17.setText("Actualizar Admin");
         jLabel17.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 540, 70, 20));
-
-        jLabel18.setForeground(new java.awt.Color(0, 0, 0));
-        jLabel18.setText("Terminar Día");
-        jLabel18.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(jLabel18, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 540, 90, -1));
-
-        terminarDia.setText("(empleados)");
-        terminarDia.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
-        jPanel2.add(terminarDia, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 460, 80, 70));
+        jPanel2.add(jLabel17, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 540, 90, 20));
 
         empleados.setText("(empleados)");
         empleados.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -526,9 +514,9 @@ public class FrmServicios extends javax.swing.JFrame {
     public javax.swing.JButton btnConfirmarServicio;
     public javax.swing.JComboBox<String> cbxEncargadoServicios;
     public javax.swing.JComboBox<String> cbxTipoLavadoServicios;
-    private javax.swing.JLabel clientes;
+    public javax.swing.JLabel clientes;
     private javax.swing.JLabel editarPrecioServicio;
-    private javax.swing.JLabel empleados;
+    public javax.swing.JLabel empleados;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
     private javax.swing.JLabel jLabel12;
@@ -537,7 +525,6 @@ public class FrmServicios extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel15;
     private javax.swing.JLabel jLabel16;
     private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
     private javax.swing.JLabel jLabel19;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;
@@ -557,7 +544,6 @@ public class FrmServicios extends javax.swing.JFrame {
     private javax.swing.JSeparator jSeparator6;
     private javax.swing.JSeparator jSeparator7;
     private javax.swing.JSeparator jSeparator8;
-    private javax.swing.JLabel terminarDia;
     public javax.swing.JTextField txtCedulaCliente;
     public javax.swing.JTextField txtColorVehiculo;
     public javax.swing.JTextField txtMarcaVehiculo;

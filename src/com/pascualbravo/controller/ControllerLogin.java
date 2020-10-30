@@ -57,7 +57,7 @@ public class ControllerLogin implements ActionListener {
 
                         //controllerServicios.runFrmServicios();
                         
-                        controllerServicios.runFrmActualizarAdmin();
+                        controllerServicios.runFrmServicios();
                         
                     } else {
                         JOptionPane.showMessageDialog(null, "Datos Incorrectos");

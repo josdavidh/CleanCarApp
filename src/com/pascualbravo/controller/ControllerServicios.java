@@ -1,8 +1,14 @@
 package com.pascualbravo.controller;
 
 
+import Vistas.ActualizarAdmins;
 import Vistas.FrmServicios;
+import Vistas.listaEmpleados;
+import static com.pascualbravo.controller.ControllerLogin.cc;
+import static com.pascualbravo.controller.ControllerLogin.password;
+import com.pascualbravo.models.Administradores;
 import com.pascualbravo.models.Clientes;
+import com.pascualbravo.models.CrudAdministradores;
 import com.pascualbravo.models.CrudClientes;
 import com.pascualbravo.models.CrudEmpleados;
 import com.pascualbravo.models.CrudRecibo;
@@ -14,9 +20,11 @@ import com.pascualbravo.models.Servicios;
 import com.pascualbravo.models.Vehiculos;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
+import java.awt.event.MouseListener;
 import javax.swing.JOptionPane;
 
-public class ControllerServicios implements ActionListener {
+public class ControllerServicios implements ActionListener, MouseListener {
 
     private Clientes clientes;
     private Vehiculos vehiculos;
@@ -29,11 +37,18 @@ public class ControllerServicios implements ActionListener {
     private CrudRecibo crudRecibo;
     private CrudServicios crudServicios;
     private FrmServicios frmServicios;
-    private ControllerAdministrador controllerAdmin;
+   
+    private listaEmpleados lista = new listaEmpleados();
+    private ListaEmp_Clnt controler;
+    private ControllerVistasRun vistasRun;
+    private ActualizarAdmins admins= new ActualizarAdmins (); 
+    private Administradores administradores;
+    private CrudAdministradores crudAdministradores;
+     
 
     public ControllerServicios(Clientes clnts, Vehiculos vehicl, Empleados emp, Recibo recb, Servicios serv, CrudClientes crudClnts,
             CrudEmpleados crudEmp, CrudVehiculos crudVehicl, CrudRecibo crudRecb, CrudServicios crudServ, FrmServicios frmServ) {
-
+        this.controler =  controler;
         this.clientes = clnts;
         this.vehiculos = vehicl;
         this.empleados = emp;
@@ -45,8 +60,9 @@ public class ControllerServicios implements ActionListener {
         this.crudRecibo = crudRecb;
         this.crudServicios = crudServ;
         this.frmServicios = frmServ;
-        this.controllerAdmin = controllerAdmin;
         
+        this.frmServicios.empleados.addMouseListener(this);
+        this.frmServicios.clientes.addMouseListener(this);
         this.frmServicios.btnConfirmarServicio.addActionListener(this);
     }
 
@@ -61,7 +77,7 @@ public class ControllerServicios implements ActionListener {
         frmServicios.txtColorVehiculo.setText(null);
         frmServicios.cbxEncargadoServicios.setSelectedIndex(0);
         frmServicios.cbxTipoLavadoServicios.setSelectedIndex(0);
-
+        
     }
 
     public void iniciar() {
@@ -71,7 +87,9 @@ public class ControllerServicios implements ActionListener {
 
     @Override
     public void actionPerformed(ActionEvent e) {
-        if (e.getSource() == frmServicios.btnConfirmarServicio) {
+      
+        
+       if (e.getSource() == frmServicios.btnConfirmarServicio) {
 
             try {
                 clientes.setCedulaCliente(Integer.parseInt(frmServicios.txtCedulaCliente.getText()));
@@ -150,5 +168,42 @@ public class ControllerServicios implements ActionListener {
         if (e.getSource() == frmServicios.btnCancelarServicio) {
             limpiar();
         }
+    }
+   
+    @Override
+    public void mouseClicked(MouseEvent arg0) {
+          if(arg0.getSource()==frmServicios.empleados){
+            ListaEmp_Clnt controler = new ListaEmp_Clnt(lista);
+            frmServicios.dispose();
+            controler.lista.setVisible(true);
+        }
+          
+        if(arg0.getSource()==frmServicios.clientes){
+            
+            ControllerAdministrador controllerAdmin = new ControllerAdministrador(admins);
+            controllerAdmin.frmAdmins.setVisible(true);
+            
+            
+        }
+    }
+
+    @Override
+    public void mousePressed(MouseEvent arg0) {
+        
+    }
+
+    @Override
+    public void mouseReleased(MouseEvent arg0) {
+   
+    }
+
+    @Override
+    public void mouseEntered(MouseEvent arg0) {
+       
+    }
+
+    @Override
+    public void mouseExited(MouseEvent arg0) {
+     
     }
 }

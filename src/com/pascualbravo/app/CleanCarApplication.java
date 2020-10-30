@@ -16,12 +16,11 @@ public class CleanCarApplication {
         CrudAdministradores crud = new CrudAdministradores();
         FrmLogin frm = new FrmLogin();
         FrmServicios frmServicios = new FrmServicios();
-        listaEmpleados lista = new listaEmpleados();
-        ListaEmp_Clnt intit = new ListaEmp_Clnt(lista);
-        /*ControllerLogin cont = new ControllerLogin(admin, crud, frm, frmServicios);
+        
+        ControllerLogin cont = new ControllerLogin(admin, crud, frm, frmServicios);
 
         cont.iniciar();
-        frm.setVisible(true);*/
+        frm.setVisible(true);
 
     }
 }
