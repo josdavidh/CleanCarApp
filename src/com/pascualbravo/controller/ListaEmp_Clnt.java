@@ -70,7 +70,6 @@ public class ListaEmp_Clnt implements ChangeListener, MouseListener, ActionListe
         this.lista.txtBuscarCedula.addKeyListener(this);
         this.lista.btnAtras.addActionListener(this);
         
-        
     }
 
     @Override

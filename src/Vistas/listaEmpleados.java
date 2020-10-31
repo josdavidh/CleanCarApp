@@ -6,6 +6,7 @@
 package Vistas;
 
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
 
 public class listaEmpleados extends javax.swing.JFrame {
@@ -15,6 +16,12 @@ public class listaEmpleados extends javax.swing.JFrame {
         initComponents();
         ImageIcon imgBuscar = new ImageIcon("src\\Recursos\\buscar.png");
         lblBuscar.setIcon(new ImageIcon(imgBuscar.getImage().getScaledInstance(lblBuscar.getWidth(), lblBuscar.getHeight(), Image.SCALE_SMOOTH)));       
+    }
+    
+     @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Recursos/logo1S.png"));
+        return retValue;
     }
 
     /**
@@ -53,12 +60,16 @@ public class listaEmpleados extends javax.swing.JFrame {
         jSeparator4 = new javax.swing.JSeparator();
         jSeparator5 = new javax.swing.JSeparator();
         btnAtras = new javax.swing.JButton();
+        btnCerrar1 = new javax.swing.JLabel();
+        btnCerrar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
-        jPanel1.setForeground(new java.awt.Color(0, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel1.setForeground(new java.awt.Color(0, 153, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(246, 246, 251));
@@ -209,24 +220,44 @@ public class listaEmpleados extends javax.swing.JFrame {
         jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
         jPanel2.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(60, 80, 140, 10));
 
-        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator2.setBackground(new java.awt.Color(0, 153, 204));
         jPanel2.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 440, 220, 10));
 
-        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator3.setBackground(new java.awt.Color(0, 153, 204));
         jPanel2.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 242, 220, 10));
 
-        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator4.setBackground(new java.awt.Color(0, 153, 204));
         jPanel2.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 300, 220, 10));
 
-        jSeparator5.setBackground(new java.awt.Color(0, 0, 0));
+        jSeparator5.setBackground(new java.awt.Color(0, 153, 204));
         jPanel2.add(jSeparator5, new org.netbeans.lib.awtextra.AbsoluteConstraints(800, 370, 220, 10));
 
+        btnAtras.setBackground(new java.awt.Color(0, 153, 204));
+        btnAtras.setForeground(new java.awt.Color(0, 0, 0));
         btnAtras.setText("Atras");
-        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 550, 110, -1));
+        btnAtras.setBorder(null);
+        btnAtras.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel2.add(btnAtras, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 550, 110, 30));
+
+        btnCerrar1.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnCerrar1.setForeground(new java.awt.Color(0, 153, 204));
+        btnCerrar1.setText("  X");
+        btnCerrar1.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCerrar1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCerrar1MouseClicked(evt);
+            }
+        });
+        jPanel2.add(btnCerrar1, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 40, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1060, 590));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(-1, -4, 1080, 610));
+
+        btnCerrar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(0, 153, 204));
+        btnCerrar.setText("  X");
+        getContentPane().add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 40, -1));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -258,6 +289,10 @@ public class listaEmpleados extends javax.swing.JFrame {
     private void btnActualizarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnActualizarActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_btnActualizarActionPerformed
+
+    private void btnCerrar1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrar1MouseClicked
+        System.exit(0);
+    }//GEN-LAST:event_btnCerrar1MouseClicked
 
      
     
@@ -304,6 +339,8 @@ public class listaEmpleados extends javax.swing.JFrame {
     public javax.swing.JButton btnActualizar;
     public javax.swing.JButton btnAtras;
     public javax.swing.JButton btnBorrar;
+    private javax.swing.JLabel btnCerrar;
+    public javax.swing.JLabel btnCerrar1;
     public javax.swing.JButton btnNuevoEmp;
     private javax.swing.JLabel jLabel2;
     private javax.swing.JLabel jLabel3;

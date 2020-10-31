@@ -12,14 +12,10 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/C:/Users/LENOVO/Documents/Universidad/herramientas3/proyecto/CleanCarApp/src/com/pascualbravo/controller/ControllerLogin.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/Universidad/herramientas3/proyecto/CleanCarApp/src/com/pascualbravo/models/CrudAdministradores.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/Universidad/herramientas3/proyecto/CleanCarApp/src/com/pascualbravo/models/Conexion.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/Universidad/herramientas3/proyecto/CleanCarApp/src/com/pascualbravo/controller/ControllerAdministrador.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/Universidad/herramientas3/proyecto/CleanCarApp/src/Vistas/FrmServicios.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/Universidad/herramientas3/proyecto/CleanCarApp/src/com/pascualbravo/controller/ControllerServicios.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/Universidad/herramientas3/proyecto/CleanCarApp/src/Vistas/ActualizarAdmins.java</file>
-            <file>file:/C:/Users/LENOVO/Documents/Universidad/herramientas3/proyecto/CleanCarApp/src/com/pascualbravo/controller/ControllerVistasRun.java</file>
+            <file>file:/C:/GitHub/cleanCar/CleanCarApp/src/Vistas/FrmLogin.java</file>
+            <file>file:/C:/GitHub/cleanCar/CleanCarApp/src/Vistas/FrmServicios.java</file>
+            <file>file:/C:/GitHub/cleanCar/CleanCarApp/src/Vistas/listaEmpleados.java</file>
+            <file>file:/C:/GitHub/cleanCar/CleanCarApp/src/Recursos/logo1.png</file>
         </group>
     </open-files>
 </project-private>

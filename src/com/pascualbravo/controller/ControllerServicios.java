@@ -44,6 +44,7 @@ public class ControllerServicios implements ActionListener, MouseListener {
     private ActualizarAdmins admins= new ActualizarAdmins (); 
     private Administradores administradores;
     private CrudAdministradores crudAdministradores;
+    ControllerAdministrador controllerAdmin = new ControllerAdministrador(admins);
      
 
     public ControllerServicios(Clientes clnts, Vehiculos vehicl, Empleados emp, Recibo recb, Servicios serv, CrudClientes crudClnts,
@@ -175,13 +176,15 @@ public class ControllerServicios implements ActionListener, MouseListener {
           if(arg0.getSource()==frmServicios.empleados){
             ListaEmp_Clnt controler = new ListaEmp_Clnt(lista);
             frmServicios.dispose();
+            controler.lista.setLocationRelativeTo(null);
             controler.lista.setVisible(true);
         }
           
         if(arg0.getSource()==frmServicios.clientes){
             
-            ControllerAdministrador controllerAdmin = new ControllerAdministrador(admins);
+            controllerAdmin.mostrarDatosAdmin();
             controllerAdmin.frmAdmins.setVisible(true);
+            
             
             
         }
@@ -206,4 +209,6 @@ public class ControllerServicios implements ActionListener, MouseListener {
     public void mouseExited(MouseEvent arg0) {
      
     }
+    
+    
 }

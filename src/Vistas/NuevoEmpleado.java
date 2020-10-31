@@ -5,6 +5,9 @@
  */
 package Vistas;
 
+import java.awt.Image;
+import java.awt.Toolkit;
+
 /**
  *
  * @author Johan Arboleda
@@ -17,6 +20,11 @@ public class NuevoEmpleado extends javax.swing.JFrame {
     public NuevoEmpleado() {
         initComponents();
         this.setLocationRelativeTo(null);
+    }
+     @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Recursos/logo1S.png"));
+        return retValue;
     }
 
     /**
@@ -49,7 +57,9 @@ public class NuevoEmpleado extends javax.swing.JFrame {
         btnCancelar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
+        setIconImage(getIconImage());
         setUndecorated(true);
+        setPreferredSize(new java.awt.Dimension(300, 430));
         setResizable(false);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -73,75 +83,85 @@ public class NuevoEmpleado extends javax.swing.JFrame {
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
         getContentPane().add(jPanel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 332));
 
-        jPanel4.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel4.setBackground(new java.awt.Color(0, 153, 204));
         jPanel4.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel5.setBackground(new java.awt.Color(246, 246, 251));
         jPanel5.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jLabel2.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel2.setText("Nombre");
-        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 40, 70, -1));
+        jPanel5.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 20, 70, -1));
 
         txtNom.setBackground(new java.awt.Color(246, 246, 251));
+        txtNom.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         txtNom.setBorder(null);
         txtNom.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 txtNomActionPerformed(evt);
             }
         });
-        jPanel5.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 140, -1));
+        jPanel5.add(txtNom, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 50, 140, 30));
 
-        jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jLabel3.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel3.setText("Cedula");
-        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 100, 70, -1));
+        jPanel5.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 100, 70, -1));
 
         txtCC.setBackground(new java.awt.Color(246, 246, 251));
+        txtCC.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         txtCC.setBorder(null);
-        jPanel5.add(txtCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 100, 140, -1));
+        jPanel5.add(txtCC, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 130, 140, 30));
 
-        jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jLabel5.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel5.setText("Salario");
-        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 160, 70, -1));
+        jPanel5.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 180, 70, -1));
 
         txtSalar.setBackground(new java.awt.Color(246, 246, 251));
+        txtSalar.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         txtSalar.setBorder(null);
-        jPanel5.add(txtSalar, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 160, 140, -1));
+        jPanel5.add(txtSalar, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 210, 140, 30));
 
-        jLabel4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 18)); // NOI18N
+        jLabel4.setFont(new java.awt.Font("Segoe UI Semilight", 0, 14)); // NOI18N
         jLabel4.setText("Jefe");
-        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 220, 70, -1));
+        jPanel5.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 250, 70, -1));
 
         txtJef.setBackground(new java.awt.Color(246, 246, 251));
+        txtJef.setFont(new java.awt.Font("Segoe UI Semibold", 1, 14)); // NOI18N
         txtJef.setBorder(null);
-        jPanel5.add(txtJef, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 220, 140, -1));
+        jPanel5.add(txtJef, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 280, 140, 30));
 
+        btnNuevoEmp.setBackground(new java.awt.Color(0, 153, 204));
         btnNuevoEmp.setText("CREAR");
-        jPanel5.add(btnNuevoEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 280, 77, -1));
+        btnNuevoEmp.setBorder(null);
+        btnNuevoEmp.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        jPanel5.add(btnNuevoEmp, new org.netbeans.lib.awtextra.AbsoluteConstraints(150, 360, 80, 30));
 
-        jSeparator1.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel5.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 120, 140, 10));
+        jSeparator1.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel5.add(jSeparator1, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 160, 140, 10));
 
-        jSeparator2.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel5.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 180, 140, 10));
+        jSeparator2.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel5.add(jSeparator2, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 240, 140, 10));
 
-        jSeparator3.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel5.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 240, 140, 10));
+        jSeparator3.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel5.add(jSeparator3, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 310, 140, 10));
 
-        jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
-        jPanel5.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 140, 10));
+        jSeparator4.setBackground(new java.awt.Color(0, 153, 204));
+        jPanel5.add(jSeparator4, new org.netbeans.lib.awtextra.AbsoluteConstraints(70, 80, 140, 10));
 
+        btnCancelar.setBackground(new java.awt.Color(0, 153, 204));
         btnCancelar.setText("CANCELAR");
+        btnCancelar.setBorder(null);
+        btnCancelar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         btnCancelar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCancelarActionPerformed(evt);
             }
         });
-        jPanel5.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(160, 280, -1, -1));
+        jPanel5.add(btnCancelar, new org.netbeans.lib.awtextra.AbsoluteConstraints(40, 360, 80, 30));
 
-        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 280, 320));
+        jPanel4.add(jPanel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 280, 410));
 
-        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 340));
+        getContentPane().add(jPanel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 300, 430));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents

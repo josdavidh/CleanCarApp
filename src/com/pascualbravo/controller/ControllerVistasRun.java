@@ -2,7 +2,6 @@ package com.pascualbravo.controller;
 
 import Vistas.ActualizarAdmins;
 import Vistas.FrmServicios;
-import Vistas.Prueba;
 import Vistas.listaEmpleados;
 import com.pascualbravo.models.Administradores;
 import com.pascualbravo.models.Clientes;

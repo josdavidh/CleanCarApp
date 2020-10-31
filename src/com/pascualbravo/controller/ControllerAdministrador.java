@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 public class ControllerAdministrador implements ActionListener {
 
     private Administradores administradores;
-    private CrudAdministradores crudAdministradores;
+    private CrudAdministradores crudAdministradores = new CrudAdministradores();
     public ActualizarAdmins frmAdmins;
 
     public ControllerAdministrador(ActualizarAdmins frmAdmin) {
@@ -21,11 +21,6 @@ public class ControllerAdministrador implements ActionListener {
 
         this.frmAdmins.btnActualizar.addActionListener(this);
 
-        administradores = crudAdministradores.BuscarPerfil(cc, password);
-        frmAdmins.Cedula.setText(String.valueOf(administradores.getCedulaAdmin()));
-        frmAdmins.Nombre.setText(administradores.getNombres());
-        frmAdmins.Apellidos.setText(administradores.getApellidos());
-        frmAdmins.password.setText(administradores.getPassword());
     }
 
     public void iniciar() {
@@ -42,6 +37,7 @@ public class ControllerAdministrador implements ActionListener {
                         && !frmAdmins.Apellidos.equals("") && !frmAdmins.password.equals("")) {
 
                     actualizar();
+                    frmAdmins.dispose();
 
                 } else {
                     JOptionPane.showMessageDialog(null, "Debe llenar todos los campos");
@@ -67,6 +63,14 @@ public class ControllerAdministrador implements ActionListener {
         } catch (Exception ed) {
             JOptionPane.showMessageDialog(null, "Error! " + ed);
         }
+    }
+
+    public void mostrarDatosAdmin() {
+        administradores = crudAdministradores.BuscarPerfil(cc, password);
+        frmAdmins.Cedula.setText(String.valueOf(administradores.getCedulaAdmin()));
+        frmAdmins.Nombre.setText(administradores.getNombres());
+        frmAdmins.Apellidos.setText(administradores.getApellidos());
+        frmAdmins.password.setText(administradores.getPassword());
     }
 
 }

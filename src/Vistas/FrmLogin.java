@@ -6,7 +6,9 @@
 package Vistas;
 
 import java.awt.Image;
+import java.awt.Toolkit;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 
 /**
  *
@@ -15,7 +17,7 @@ import javax.swing.ImageIcon;
 public class FrmLogin extends javax.swing.JFrame {
 
     public FrmLogin() {
-        initComponents();
+        initComponents(); 
         this.setLocationRelativeTo(null);
 
         ImageIcon user = new ImageIcon("src\\Recursos\\login.png");
@@ -24,6 +26,13 @@ public class FrmLogin extends javax.swing.JFrame {
         ImageIcon logos = new ImageIcon("src\\Recursos\\logoazul.jpeg");
         this.logo.setIcon(new ImageIcon(logos.getImage().getScaledInstance(logo.getWidth() - 2, logo.getHeight() - 2, Image.SCALE_DEFAULT)));
     }
+    
+    @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Recursos/logo1S.png"));
+        return retValue;
+    }
+    
 
     @SuppressWarnings("unchecked")
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
@@ -51,6 +60,7 @@ public class FrmLogin extends javax.swing.JFrame {
         jLabel10 = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
@@ -141,6 +151,11 @@ public class FrmLogin extends javax.swing.JFrame {
         txtUsuario.setFont(new java.awt.Font("Segoe UI Semibold", 1, 18)); // NOI18N
         txtUsuario.setBorder(null);
         txtUsuario.setCaretColor(new java.awt.Color(0, 102, 102));
+        txtUsuario.addKeyListener(new java.awt.event.KeyAdapter() {
+            public void keyTyped(java.awt.event.KeyEvent evt) {
+                txtUsuarioKeyTyped(evt);
+            }
+        });
         jPanel2.add(txtUsuario, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 220, 210, -1));
 
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 0, 440, 400));
@@ -205,7 +220,7 @@ public class FrmLogin extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void xMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_xMouseClicked
-        this.dispose();
+        System.exit(0);
     }//GEN-LAST:event_xMouseClicked
 
     private void jPanel2MousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jPanel2MousePressed
@@ -236,6 +251,17 @@ public class FrmLogin extends javax.swing.JFrame {
     private void xActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_xActionPerformed
         // TODO add your handling code here:
     }//GEN-LAST:event_xActionPerformed
+
+    private void txtUsuarioKeyTyped(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_txtUsuarioKeyTyped
+        char user = evt.getKeyChar();
+
+        if (Character.isLetter(user)) {
+            getToolkit().beep();
+            evt.consume();
+
+            JOptionPane.showMessageDialog(rootPane, "Escriba solo numeros");
+        }
+    }//GEN-LAST:event_txtUsuarioKeyTyped
 
     /**
      * @param args the command line arguments

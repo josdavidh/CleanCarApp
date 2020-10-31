@@ -9,6 +9,7 @@ import com.pascualbravo.models.Conexion;
 import com.pascualbravo.models.CrudServicios;
 import com.pascualbravo.models.Servicios;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ItemEvent;
 import javax.swing.ImageIcon;
 import javax.swing.JOptionPane;
@@ -40,6 +41,12 @@ public class FrmServicios extends javax.swing.JFrame {
         empleados.setIcon(new ImageIcon(imgEmpleados.getImage().getScaledInstance(empleados.getWidth(), empleados.getHeight(), Image.SCALE_SMOOTH)));
 
       
+    }
+    
+     @Override
+    public Image getIconImage(){
+        Image retValue = Toolkit.getDefaultToolkit().getImage(ClassLoader.getSystemResource("Recursos/logo1S.png"));
+        return retValue;
     }
 
     /**
@@ -94,11 +101,14 @@ public class FrmServicios extends javax.swing.JFrame {
         empleados = new javax.swing.JLabel();
         jLabel19 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
+        btnCerrar = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setIconImage(getIconImage());
+        setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jPanel1.setBackground(new java.awt.Color(0, 102, 102));
+        jPanel1.setBackground(new java.awt.Color(0, 153, 204));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jPanel2.setBackground(new java.awt.Color(246, 246, 251));
@@ -373,6 +383,17 @@ public class FrmServicios extends javax.swing.JFrame {
         jLabel5.setText("Teléfono de contacto");
         jPanel2.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 220, 220, 30));
 
+        btnCerrar.setFont(new java.awt.Font("Dialog", 1, 24)); // NOI18N
+        btnCerrar.setForeground(new java.awt.Color(0, 153, 204));
+        btnCerrar.setText("  X");
+        btnCerrar.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        btnCerrar.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                btnCerrarMouseClicked(evt);
+            }
+        });
+        jPanel2.add(btnCerrar, new org.netbeans.lib.awtextra.AbsoluteConstraints(1020, 0, 40, -1));
+
         jPanel1.add(jPanel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 10, 1060, 580));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 1080, 600));
@@ -473,6 +494,10 @@ public class FrmServicios extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_txtModeloVehiculoKeyTyped
 
+    private void btnCerrarMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_btnCerrarMouseClicked
+       System.exit(0);
+    }//GEN-LAST:event_btnCerrarMouseClicked
+
     /**
      * @param args the command line arguments
      */
@@ -511,6 +536,7 @@ public class FrmServicios extends javax.swing.JFrame {
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     public javax.swing.JButton btnCancelarServicio;
+    private javax.swing.JLabel btnCerrar;
     public javax.swing.JButton btnConfirmarServicio;
     public javax.swing.JComboBox<String> cbxEncargadoServicios;
     public javax.swing.JComboBox<String> cbxTipoLavadoServicios;
